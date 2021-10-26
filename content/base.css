@@ -1,0 +1,40 @@
+body{
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.boxed{
+  border-color: black;
+  outline-color: black;
+  border-style: solid;
+}
+
+#section-left{
+  flex-grow: 6;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+#section-right{
+  flex-grow: 4;
+}
+
+#heading-container{
+  flex-grow: 3;
+
+}
+
+#image-container{
+  flex-grow: 7;
+
+}

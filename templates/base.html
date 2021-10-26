@@ -7,16 +7,25 @@
 
   <title>Suture</title>
 
-  <link rel="stylesheet" href="{{ get_url(path="/static/css/base.css") | safe }}" >
+  <link rel="stylesheet" href="{{ get_url(path="base.css") | safe }}" >
 </head>
 
 <body>
-  <section class="section" id="left-section">
-    <div class="container">
+  <section class="section boxed" id="section-left">
+    <div class="container boxed" id="heading-container">
+      <div class="heading">
+        <span>KLASSE FOTOGRAFIE</span>
+        <br>
+        <span>BROOMBERG/CHANARIN<span>
+        <br>
+        <span>HFBK HAMBURG</span>
+      </div>
+    </div>
+    <div class="container boxed" id="image-container">
       {% block left_content %} {% endblock %}
     </div>
   </section>
-  <section class="section" id="right-section">
+  <section class="section boxed" id="section-right">
     <div class="container">
       {% block right_content %} {% endblock %}
     </div>
