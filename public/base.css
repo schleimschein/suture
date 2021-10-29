@@ -1,0 +1,299 @@
+:root {
+  --letter-spacing: -0.06em;
+
+  --heading-font-size: 8.5vh;
+  --heading-line-height: 0.88;
+  --heading-height: calc(3 * var(--heading-line-height) * var(--heading-font-size));
+  --bottom-height: calc(100vh - var(--heading-height));
+
+  --heading-date-font-size: 3vh;
+  --heading-date-line-height: 0.88;
+
+  --heading-adress-font-size: 1.5vh;
+  --heading-adress-line-height: 0.88;
+
+
+  --suture-font-size: 14.93vh;
+  --suture-line-height: 1.13;
+  --suture-height: calc(0.875 * var(--suture-font-size));
+
+  --logo-top-height: calc(0.87 * var(--heading-line-height) * var(--heading-font-size));
+  --logo-bottom-height: calc(0.45 * var(--logo-top-height) );
+
+
+  --link-hover-color: #8BE3D9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+
+  overflow: hidden;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+
+a:hover{
+  color: var(--link-hover-color);
+}
+
+.active{
+  color: var(--link-hover-color);
+}
+
+
+a:visited{
+  color: none;
+}
+
+.left{
+  height: 100vh;
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.middle{
+  height: 100vh;
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.right{
+  height: 100vh;
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.top{
+  flex: 0 0 var(--heading-height);
+  padding-top: 1.5vh;
+}
+
+.bottom{
+  flex: 1 0 var(--bottom-height);
+}
+
+#top-left{
+  top: 0;
+  position: sticky;
+}
+
+.heading{
+  font-size: var(--heading-font-size);
+  line-height:  var(--heading-line-height);
+}
+
+.heading-large{
+  font-family: 'Sporting Grotesque_Bold';
+  letter-spacing: var(--letter-spacing);
+}
+
+.heading-small{
+  font-family: 'Sporting Grotesque_Bold';
+
+  display: inline-block;
+  text-align: center;
+
+  position: absolute;
+  bottom: 2.7vh;
+  right: 1vw;
+}
+
+.heading-date{
+  font-size: var(--heading-date-font-size);
+  line-height:  var(--heading-date-line-height);
+  display: block;
+}
+
+.heading-adress
+{
+  font-size: var(--heading-adress-font-size);
+  line-height:  var(--heading-adress-line-height);
+  display:block;
+}
+
+#bottom-left{
+  display: flex;
+  flex-direction: row;
+  height: var(--bottom-height);
+  overflow: scroll;
+}
+
+#bottom-left::-webkit-scrollbar {
+  display: none;
+}
+
+.content-wrapper{
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+
+.img-container{
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+  background-color: orange;
+  color: orange;
+}
+
+img{
+  object-fit: cover;
+  flex: 1;
+  width: 0px; /* No idea why this works, but it does */
+}
+
+
+.side-heading-spacer{
+  flex: 0 0 auto;
+  width: var(--suture-height);
+
+}
+
+#bottom-middle{
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.side-heading-wrapper{
+  position: sticky;
+  top: var(--heading-height);
+}
+
+.side-heading{
+  font-size: var(--suture-font-size);
+  line-height: var(--suture-line-height);
+  transform: rotate(90deg) ;
+
+  position: absolute;
+  transform-origin: top left;
+  letter-spacing: var(--letter-spacing);
+}
+
+#top-right{
+}
+
+#bottom-middle{
+}
+
+#bottom-right{
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.logo-top {
+  position: absolute;
+  display: block;
+  width: var(--logo-top-height);
+  height: var(--logo-top-height);
+  margin-top: 24px;
+
+  margin-right: 8px;
+
+  right: 0;
+  top: 0;
+}
+
+.logos:hover{
+  fill: var(--link-hover-color);
+}
+
+.logo-bottom{
+  position: absolute;
+  display: block;
+  height: var(--logo-bottom-height);
+  width: var(--logo-top-height);
+  margin-top: 24px;
+
+  margin-right: 8px;
+
+  right: 0;
+  bottom: 0;
+
+}
+
+
+.name-list{
+  font-family: 'Sporting Grotesque_Bold';
+
+  list-style-type: none;
+  text-align: right;
+  margin: 10px;
+  padding: 0;
+  font-size: 1.6vh;
+  line-height: 1.1;
+}
+
+
+@media screen and (max-width: 768px) {
+  .right{display: none;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Sporting Grotesque_Regular';
+    src:    url('Regular/Sporting_Grotesque-Regular_web.eot');
+    src:    url('Regular/Sporting_Grotesque-Regular_web.eot?#iefix') format('embedded-opentype'),
+            url('Regular/Sporting_Grotesque-Regular_web.woff') format('woff'),
+            url('Regular/Sporting_Grotesque-Regular_web.woff2') format('woff2'),
+            url('Regular/Sporting_Grotesque-Regular_web.ttf') format('truetype'),
+            url('Regular/Sporting_Grotesque-Regular_web.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sporting Grotesque_Bold';
+    src:    url('Bold/Sporting_Grotesque-Bold_web.eot');
+    src:    url('Bold/Sporting_Grotesque-Bold_web.eot?#iefix') format('embedded-opentype'),
+            url('Bold/Sporting_Grotesque-Bold_web.woff') format('woff'),
+            url('Bold/Sporting_Grotesque-Bold_web.woff2') format('woff2'),
+            url('Bold/Sporting_Grotesque-Bold_web.ttf') format('truetype'),
+            url('Bold/Sporting_Grotesque-Bold_web.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

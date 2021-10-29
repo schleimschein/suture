@@ -128,8 +128,8 @@ a:visited{
 .heading-adress
 {
   font-size: var(--heading-adress-font-size);
-  line-height:  var(--heading-adress-line-height);s
-  display:block
+  line-height:  var(--heading-adress-line-height);
+  display:block;
 }
 
 #bottom-left{
@@ -150,25 +150,19 @@ a:visited{
   align-items: stretch;
 }
 
-.img-container-wrapper{
-  flex: 1 0 auto;
-  display:flex;
-  flex-direction: column;
-  align-items: stretch;
-}
 
 .img-container{
+  flex: 1 0 auto;
   display: flex;
-  height: var(--bottom-height);
+  flex-direction: row;
+  background-color: orange;
+  color: orange;
 }
 
 img{
-
-
-  background-color: orange;
-  color: orange;
   object-fit: cover;
-
+  flex: 1;
+  width: 0px; /* No idea why this works, but it does */
 }
 
 

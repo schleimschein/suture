@@ -8,6 +8,8 @@
   <title>Suture</title>
 
   <link rel="stylesheet" href="{{ get_url(path="base.css") | safe }}" >
+  <script src="{{ get_url(path="set-img-size.js") | safe }}"> </script>
+
 </head>
 
 <body>
@@ -34,14 +36,11 @@
     </div>
     <div class="bottom" id="bottom-left">
       <div class="content-wrapper">
-        <div class="img-container-wrapper">
-          <div class="img-container">
-
-             <img class="img" src="{{ get_url(path="bird-ausschnitt-66-72.jpg") | safe }}" alt="Bird crop">
-          </div>
-          <div class="img-container">
-          <!-- <img class="img" src="{{ get_url(path="umlungu_1.jpg") | safe }}" alt="Bird crop"> -->
-          </div>
+        <div class="img-container">
+          <img class="img" src="{{ get_url(path="bird-ausschnitt-66-72.jpg") | safe }}" alt="Bird crop">
+        </div>
+        <div class="img-container">
+          <img class="img" src="{{ get_url(path="umlungu_1.jpg") | safe }}" alt="Bird crop">
         </div>
       </div>
         <!--
