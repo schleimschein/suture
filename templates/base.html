@@ -8,7 +8,36 @@
   <title>Suture</title>
 
   <link rel="stylesheet" href="{{ get_url(path="base.css") | safe }}" >
-  <script src="{{ get_url(path="set-img-size.js") | safe }}"> </script>
+  <script src="{{ get_url(path="scroll.js") | safe }}" ></script>
+
+  <!-- <script>
+    window.onload = function()
+    {
+      console.log('onload');
+      bindScroll();
+
+    };
+
+    function bindScroll()
+    {
+      console.log('bindScroll');
+
+      var targetElem = document.getElementsByClassName('content-wrapper')[0];
+      console.log(targetElem);
+
+      window.addEventListener('wheel', function(){
+        console.log("wheeling");
+
+      }, true);
+
+      //document.addEventListener('scroll', function(e){
+      //  console.log("scrolling");
+      //  console.log(window.scrollY);
+      //  targetElem.scrollTop = e.target.scrollTop;
+      //});
+    }
+
+  </script> -->
 
 </head>
 

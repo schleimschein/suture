@@ -86,7 +86,6 @@ a:visited{
 
 .top{
   flex: 0 0 var(--heading-height);
-  padding-top: 1.5vh;
 }
 
 .bottom{
@@ -95,6 +94,7 @@ a:visited{
 
 #top-left{
   top: 0;
+  padding-top: 1.5vh;
   position: sticky;
 }
 
@@ -212,7 +212,7 @@ img{
   display: block;
   width: var(--logo-top-height);
   height: var(--logo-top-height);
-  margin-top: 24px;
+  margin-top: 5px;
 
   margin-right: 8px;
 
@@ -229,7 +229,7 @@ img{
   display: block;
   height: var(--logo-bottom-height);
   width: var(--logo-top-height);
-  margin-top: 24px;
+  margin-bottom: 5px;
 
   margin-right: 8px;
 
