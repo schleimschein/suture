@@ -9,6 +9,16 @@
 
   <link rel="stylesheet" href="{{ get_url(path="base.css") | safe }}" >
   <script src="{{ get_url(path="scroll.js") | safe }}" ></script>
+  <script src="{{ get_url(path="scroll-into-view.js") | safe }}" ></script>
+
+  <script>
+    window.addEventListener('load', init);
+    function init(){
+      console.log('DOM fully loaded and parsed');
+      initScroll();
+      initScrollIntoView();
+    }
+  </script>
 
   <!-- <script>
     window.onload = function()
@@ -65,10 +75,10 @@
     </div>
     <div class="bottom" id="bottom-left">
       <div class="content-wrapper">
-        <div class="img-container">
+        <div class="img-container" data-artist='stern'>
           <img class="img" src="{{ get_url(path="bird-ausschnitt-66-72.jpg") | safe }}" alt="Bird crop">
         </div>
-        <div class="img-container">
+        <div class="img-container" data-artist='chandler'>
           <img class="img" src="{{ get_url(path="umlungu_1.jpg") | safe }}" alt="Bird crop">
         </div>
       </div>
@@ -166,7 +176,7 @@
         <ul class="name-list">
           <li>BOERCKEL</li>
           <li>BOTSCHEN</li>
-          <li>CHANDLER</li>
+          <li  data-artist="chandler"><a>CHANDLER</a></li>
           <li>DORN</li>
           <li>EICKE</li>
           <li>GÖKTEN</li>
@@ -185,7 +195,7 @@
           <li>SLAGMAN</li>
           <li>SPIEGELFELD</li>
           <li>STEINHAUSER</li>
-          <li class="active">STERN</li>
+          <li data-artist="stern"><a>STERN</a></li>
           <li>ZDRNJA</li>
       </ul>
     </div>

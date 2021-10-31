@@ -1,18 +1,12 @@
-window.addEventListener('load', initScroll);
-console.log('DOM fully loaded and parsed');
-
-
-function initScroll() {
-    console.log("initScroll");
-    let targetScroll = document.getElementsByClassName('bottom')[0];
+function initScrollBehaviour() {
+    let targetScroll = document.getElementsByClassName('content-wrapper')[0];
     //target.scrollTop=1200;
-    let speed = 33;
-    let smooth = 5;
+    let speed = 44;
+    let smooth = 7;
     new SmoothScroll(targetScroll, speed, smooth)
 }
 
 function SmoothScroll(targetScroll, speed, smooth) {
-  console.log("smoothScroll");
 
   target = document;
 
@@ -34,7 +28,6 @@ function SmoothScroll(targetScroll, speed, smooth) {
 	target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
 
 	function scrolled(e) {
-    console.log('scrollDetected');
 
 		e.preventDefault(); // disable default scrolling
 
@@ -57,7 +50,6 @@ function SmoothScroll(targetScroll, speed, smooth) {
 	}
 
 	function update() {
-    console.log('updating');
 
 		moving = true
 
