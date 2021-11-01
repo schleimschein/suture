@@ -13,12 +13,12 @@
   --suture-line-height: 1.13;
   --suture-height: calc(0.875 * var(--suture-font-size));
 
-  --logo-top-height: calc(0.87 * var(--heading-line-height) * var(--heading-font-size));
+  --logo-top-height: calc(0.7 * var(--computedHeadingFontSize));
   --logo-bottom-height: calc(0.45 * var(--logo-top-height) );
 
 
-  --link-hover-color: #00c9a3;
-
+  /* --link-hover-color: #00c9a3; */
+--link-hover-color: 	#0013de;
 
 
   /* font metrics */
@@ -265,9 +265,9 @@ img{
   display: block;
   width: var(--logo-top-height);
   height: var(--logo-top-height);
-  margin-top: 15px;
+  margin-top: 5px;
 
-  margin-right: 8px;
+  margin-right: 5px;
 
   right: 0;
   top: 0;
@@ -282,9 +282,9 @@ img{
   display: block;
   height: var(--logo-bottom-height);
   width: var(--logo-top-height);
-  /* margin-bottom: 15px; */
+  margin-bottom: 5px;
 
-  margin-right: 8px;
+  margin-right: 5px;
 
   right: 0;
   bottom: 0;

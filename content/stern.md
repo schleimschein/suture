@@ -1,4 +1,6 @@
 +++
-title = "Sebastian Stern"
-birth_date = 1992-09-27
+title = "STERN"
+
+[extra]
+img = "bird-ausschnitt-66-72.jpg"
 +++

@@ -1,26 +1,24 @@
 {% extends "base.html" %}
 
 {% block left_content %}
+  {% for page in section.pages %}
+    {% set imgs_dir_url = get_url(path="@/_index.md") %}
 
-
-
-
-<!-- <img class="img" src="{{ get_url(path="umlungu_1.jpg") | safe }}" alt="Bruise"> -->
-
-
-<!--
-<div class="img-container-wrapper">
-  <div class="img-container">
-
-  </div>
-</div>
--->
+    <div class="img-container" data-artist='{{ page.title | safe }}'>
+      <img class="img" src="{{imgs_dir_url ~ page.extra.img }}" alt="Bird crop">
+    </div>
+  {% endfor %}
 
 
 {% endblock left_content %}
 
 {% block right_content %}
-<h1 class="title">
-  SUTURE
-</h1>
+  <ul class="name-list">
+    {% for page in section.pages %}
+      <li data-artist="{{ page.title | safe }}">
+<a>{{ page.title | safe }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
 {% endblock right_content %}

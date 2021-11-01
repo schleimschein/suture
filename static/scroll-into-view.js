@@ -12,11 +12,14 @@ function initScrollIntoView() {
   var nameElems = nameList.querySelectorAll('li');
   nameElems.forEach(nameElem => {
     let name = nameElem.dataset.artist;
+
+
     if(name){
-      let targetClick = nameElem.firstChild;
+      let targetClick = nameElem.firstElementChild;
+
       let targetScroll = imgContainers_dict[name];
       targetClick.addEventListener("click", function() {
-        console.log(targetScroll);
+
         targetScroll.scrollIntoView({behavior: "smooth"});
       });
     }

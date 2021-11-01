@@ -10,6 +10,7 @@ function initScrollHighlight() {
   nameElems.forEach(nameElem => {
     let name = nameElem.dataset.artist;
     nameElems_dict[name]=nameElem;
+    console.log(nameElem);
   });
 
   // create observer
@@ -24,7 +25,7 @@ function initScrollHighlight() {
       let imgContainer = entry.target;
       let name = imgContainer.dataset.artist;
       let nameElem = nameElems_dict[name];
-      let nameAnchor = nameElem.firstChild;
+      let nameAnchor = nameElem.firstElementChild;
       nameAnchor.className = "";
 
       // add active class if visible

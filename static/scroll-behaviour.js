@@ -50,13 +50,10 @@ function SmoothScroll(targetScroll, speed, smooth) {
 	}
 
 	function update() {
-    console.log('I have been awoken');
-
 
 		moving = true
 
 		var delta = (pos - targetScroll.scrollTop) / smooth
-    console.log(delta);
 
 		targetScroll.scrollTop += delta
 

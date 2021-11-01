@@ -1,6 +1,8 @@
 +++
 title = "List of artists"
-sort_by = "date"
+sort_by = "title"
 template = "index.html"
-page_template = "index-artist.html"
+
+[extra]
+imgs_dir = "/content/images/"
 +++

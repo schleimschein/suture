@@ -20,7 +20,6 @@
       initScrollHighlight();
     }
   </script>
-
 </head>
 
 <body>
@@ -51,37 +50,16 @@
     </div>
     <div class="bottom" id="bottom-left">
       <div class="content-wrapper">
-        <div class="img-container" data-artist='stern'>
-          <img class="img" src="{{ get_url(path="bird-ausschnitt-66-72.jpg") | safe }}" alt="Bird crop">
-        </div>
-        <div class="img-container" data-artist='chandler'>
-          <img class="img" src="{{ get_url(path="umlungu_1.jpg") | safe }}" alt="Bird crop">
-        </div>
-      </div>
-        <!--
-        <div class="img-placeholder">
-          <img class="img" src="{{ get_url(path="umlungu_1.jpg") | safe }}" alt="Bird crop">
-        </div>
-      -->
-
-
-      <!--
-      <div class="img-container">
-        <img class="img" src="{{ get_url(path="bird-ausschnitt-66-72.jpg") | safe }}" alt="Bird crop">
-        <img class="img" src="{{ get_url(path="umlungu_1.jpg") | safe }}" alt="Bird crop">
-      </div>
-      -->
-
         {% block left_content %} {% endblock %}
+      </div>
      <div class=side-heading-spacer>
      </div>
-    </div>
+   </div>
   </div>
 
 
   <div class="middle">
     <div class="top" id="top-middle">
-
     </div>
     <div class="bottom" id="bottom-middle">
       <div class="side-heading-wrapper">
@@ -95,7 +73,7 @@
 
 
 
-<div class="right">
+  <div class="right">
     <div class="top" id="top-right">
       <a class="logos" href="https://www.goethe.de/en/index.html" target="_blank">
         <div class="logo-top">
@@ -146,34 +124,10 @@
             <path id="path4013" d="M87.86,45.8h5.89v23.44h6.21V45.8h5.89v-5.15H87.86V45.8z"/>
           </svg>
         </div>
-    </a>
-  </div>
-  <div class="bottom" id="bottom-right">
-        <ul class="name-list">
-          <li>BOERCKEL</li>
-          <li>BOTSCHEN</li>
-          <li  data-artist="chandler"><a>CHANDLER</a></li>
-          <li>DORN</li>
-          <li>EICKE</li>
-          <li>GÖKTEN</li>
-          <li>HAMM</li>
-          <li>KUNZ</li>
-          <li>KUSSMANN</li>
-          <li>PEREZ</li>
-          <li>KRÜGER</li>
-          <li>TELLES</li>
-          <li>KADOW</li>
-          <li>REBASCHUS</li>
-          <li>SABBAGH</li>
-          <li>SAVUTSINA</li>
-          <li>SCHWARZMANN</li>
-          <li>SINGALOVSKI</li>
-          <li>SLAGMAN</li>
-          <li>SPIEGELFELD</li>
-          <li>STEINHAUSER</li>
-          <li data-artist="stern"><a>STERN</a></li>
-          <li>ZDRNJA</li>
-      </ul>
+      </a>
+    </div>
+    <div class="bottom" id="bottom-right">
+      {% block right_content %} {% endblock %}
     </div>
   </div>
 
