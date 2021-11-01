@@ -50,14 +50,17 @@ function SmoothScroll(targetScroll, speed, smooth) {
 	}
 
 	function update() {
+    console.log('I have been awoken');
+
 
 		moving = true
 
 		var delta = (pos - targetScroll.scrollTop) / smooth
+    console.log(delta);
 
 		targetScroll.scrollTop += delta
 
-		if (Math.abs(delta) > 0.5)
+		if (Math.abs(delta) > 1) // Update routine got stuck since delta would get stuck around 0.8
 			requestFrame(update)
 		else
 			moving = false
@@ -71,7 +74,7 @@ function SmoothScroll(targetScroll, speed, smooth) {
 			window.oRequestAnimationFrame ||
 			window.msRequestAnimationFrame ||
 			function(func) {
-				window.setTimeout(func, 1000 / 50);
+				window.setTimeout(func, 1000 / 100);
 			}
 		);
 	}()

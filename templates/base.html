@@ -8,48 +8,18 @@
   <title>Suture</title>
 
   <link rel="stylesheet" href="{{ get_url(path="base.css") | safe }}" >
-  <script src="{{ get_url(path="scroll.js") | safe }}" ></script>
+  <script src="{{ get_url(path="scroll-behaviour.js") | safe }}" ></script>
   <script src="{{ get_url(path="scroll-into-view.js") | safe }}" ></script>
   <script src="{{ get_url(path="scroll-highlight.js") | safe }}" ></script>
 
   <script>
     window.addEventListener('load', init);
     function init(){
-      console.log('DOM fully loaded and parsed');
       initScrollBehaviour();
       initScrollIntoView();
       initScrollHighlight();
     }
   </script>
-
-  <!-- <script>
-    window.onload = function()
-    {
-      console.log('onload');
-      bindScroll();
-
-    };
-
-    function bindScroll()
-    {
-      console.log('bindScroll');
-
-      var targetElem = document.getElementsByClassName('content-wrapper')[0];
-      console.log(targetElem);
-
-      window.addEventListener('wheel', function(){
-        console.log("wheeling");
-
-      }, true);
-
-      //document.addEventListener('scroll', function(e){
-      //  console.log("scrolling");
-      //  console.log(window.scrollY);
-      //  targetElem.scrollTop = e.target.scrollTop;
-      //});
-    }
-
-  </script> -->
 
 </head>
 
@@ -59,10 +29,14 @@
       <div class="heading">
         <div class="heading-large">
           <a href="https://www.instagram.com/hfbkphotography/" target="_blank">
-            <div>KLASSE FOTOGRAFIE</div>
-            <div>BROOMBERG/CHANARIN</div>
+            <div><span id="heading-large-first-span">KLASSE FOTOGRAFIE</span></div>
+            <br>
+            <div><span class="heading-large-not-first-span">BROOMBERG/CHANARIN</span></div>
           </a>
-          <a href="https://www.hfbk-hamburg.de/en/" target="_blank">HFBK HAMBURG</a>
+          <br>
+          <a href="https://www.hfbk-hamburg.de/en/" target="_blank">
+            <div><span class="heading-large-not-first-span">HFBK HAMBURG</span></div>
+          </a>
         </div>
 
         <div class="heading-small">
