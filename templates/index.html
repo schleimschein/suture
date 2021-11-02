@@ -4,9 +4,9 @@
   {% for page in section.pages %}
     {% set imgs_dir_url = get_url(path="@/_index.md") %}
 
-    <div class="img-container" data-artist='{{ page.title | safe }}'>
+    <a href="{{page.extra.link}}" class="img-container" data-artist='{{ page.title | safe }}'>
       <img class="img" src="{{imgs_dir_url ~ page.extra.img }}" alt="Bird crop">
-    </div>
+    </a>
   {% endfor %}
 
 
