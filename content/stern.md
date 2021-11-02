@@ -2,5 +2,5 @@
 title = "STERN"
 
 [extra]
-img = "bird-ausschnitt-66-72.jpg"
+img = "stern-60-72.jpg"
 +++

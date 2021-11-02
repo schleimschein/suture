@@ -2,5 +2,5 @@
 title = "CHANDLER"
 
 [extra]
-img = "umlungu_1.jpg"
+img = "chandler-60-72.jpg"
 +++
