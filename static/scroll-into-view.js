@@ -21,6 +21,8 @@ function initScrollIntoView() {
       targetClick.addEventListener("click", function() {
 
         targetScroll.scrollIntoView({behavior: "smooth"});
+        globalPos = targetScroll.offsetTop;
+        console.log(globalPos);
       });
     }
   });

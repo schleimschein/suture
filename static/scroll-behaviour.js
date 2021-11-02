@@ -1,8 +1,8 @@
 function initScrollBehaviour() {
     let targetScroll = document.getElementsByClassName('content-wrapper')[0];
     //target.scrollTop=1200;
-    let speed = 44;
-    let smooth = 7;
+    let speed = 100;
+    let smooth = 10;
     new SmoothScroll(targetScroll, speed, smooth)
 }
 
@@ -14,27 +14,29 @@ function SmoothScroll(targetScroll, speed, smooth) {
 		target = (document.scrollingElement
               || document.documentElement
               || document.body.parentNode
-              || document.body) // cross browser support for document scrolling
+              || document.body); // cross browser support for document scrolling
 
-	var moving = false
-	var pos = targetScroll.scrollTop
+	var moving = false;
+	globalPos = targetScroll.scrollTop;
 
   var frame = targetScroll === document.body
               && document.documentElement
               ? document.documentElement
               : target // safari is the new IE
 
-	target.addEventListener('mousewheel', scrolled, { passive: false })
-	target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
+	target.addEventListener('mousewheel', scrolled, { passive: false });
+	target.addEventListener('DOMMouseScroll', scrolled, { passive: false });
 
 	function scrolled(e) {
 
+    targetScroll.scrollTop = globalPos;
+    globalPos = targetScroll.scrollTop;
 		e.preventDefault(); // disable default scrolling
 
-		var delta = normalizeWheelDelta(e)
+		var delta = normalizeWheelDelta(e);
 
-		pos += -delta * speed
-		pos = Math.max(0, Math.min(pos, targetScroll.scrollHeight - frame.clientHeight)) // limit scrolling
+		globalPos += -delta * speed
+		globalPos = Math.max(0, Math.min(globalPos, targetScroll.scrollHeight - frame.clientHeight)) // limit scrolling
 
 		if (!moving) update()
 	}
@@ -53,7 +55,8 @@ function SmoothScroll(targetScroll, speed, smooth) {
 
 		moving = true
 
-		var delta = (pos - targetScroll.scrollTop) / smooth
+		var delta = (globalPos - targetScroll.scrollTop) / smooth
+    console.log(delta)
 
 		targetScroll.scrollTop += delta
 
