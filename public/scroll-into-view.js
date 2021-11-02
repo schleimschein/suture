@@ -1,5 +1,6 @@
 function initScrollIntoView() {
 
+  // Create dict of imgContainers
   var imgContainers_dict = {};
   var contentWrapper = document.getElementsByClassName('content-wrapper')[0];
   var imgContainers = contentWrapper.querySelectorAll('.img-container');
@@ -7,6 +8,16 @@ function initScrollIntoView() {
     let name = imgContainer.dataset.artist;
     imgContainers_dict[name]=imgContainer;
   });
+
+  // Scroll Slagman into view and make content wrapper visible
+  imgContainer_slagman = imgContainers_dict["SLAGMAN"];
+  imgContainer_slagman.scrollIntoView();
+  globalPos = imgContainer_slagman.offsetTop;
+
+  contentWrapper = document.getElementsByClassName("content-wrapper")[0];
+  contentWrapper.style.visibility = "visible";
+
+  // Create dict of list elems and add click event to each that scrolls imgContainer into view
 
   var nameList = document.getElementsByClassName('name-list')[0];
   var nameElems = nameList.querySelectorAll('li');

@@ -5,7 +5,7 @@
     {% set imgs_dir_url = get_url(path="@/_index.md") %}
 
     <a href="{{page.extra.link}}" class="img-container" data-artist='{{ page.title | safe }}'>
-      <img class="img" src="{{imgs_dir_url ~ page.extra.img }}" alt="Bird crop">
+      <img class="img" src="{{imgs_dir_url ~ page.extra.img }}" loading="lazy" alt="Image by {{ page.title | safe}}"">
     </a>
   {% endfor %}
 
