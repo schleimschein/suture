@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://suture.show/sitemap.xml
+Sitemap: https://selfmade.suture.show/sitemap.xml
