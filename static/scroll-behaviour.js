@@ -1,7 +1,7 @@
 function initScrollBehaviour() {
     let targetScroll = document.getElementsByClassName('content-wrapper')[0];
     //target.scrollTop=1200;
-    let speed = 100;
+    let speed = 500;
     let smooth = 10;
     new SmoothScroll(targetScroll, speed, smooth)
 }
