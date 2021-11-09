@@ -12,6 +12,11 @@
   <script src="{{ get_url(path="scroll-into-view.js") | safe }}" ></script>
   <script src="{{ get_url(path="scroll-highlight.js") | safe }}" ></script>
 
+  <script src="{{ get_url(path="fitty.min.js") | safe }}"></script>
+  <script src="{{ get_url(path="load-font-for-fitty.js") | safe }}"></script>
+  <script src="{{ get_url(path="adjust-fonts.js") | safe }}"></script>
+
+
   <script>
     window.addEventListener('load', init);
     function init(){
@@ -19,6 +24,9 @@
       initScrollBehaviour();
       initScrollIntoView();
       initScrollHighlight();
+
+      // fitty(".fit-heading");
+      // initAdjustFonts();
     }
   </script>
 </head>
@@ -27,15 +35,13 @@
   <div class="left">
     <div class="top" id="top-left">
       <div class="heading">
-        <div class="heading-large">
+        <div class="heading-large" id="heading-large">
           <a href="https://www.instagram.com/hfbkphotography/" target="_blank">
-            <div><span id="heading-large-first-span">KLASSE FOTOGRAFIE</span></div>
-            <br>
-            <div><span class="heading-large-not-first-span">BROOMBERG/CHANARIN</span></div>
+            <div><span class="overtake-font-size" id="heading-large-first-span">KLASSE FOTOGRAFIE</span></div>
+            <div><span class="fit-heading heading-large-not-first-span" id="heading-large-second-span">BROOMBERG/CHANARIN</span></div>
           </a>
-          <br>
           <a href="https://www.hfbk-hamburg.de/en/" target="_blank">
-            <div><span class="heading-large-not-first-span">HFBK HAMBURG</span></div>
+            <div><span class="overtake-font-size heading-large-not-first-span">HFBK HAMBURG</span></div>
           </a>
         </div>
 
@@ -47,6 +53,8 @@
         </div>
 
 
+      </div>
+      <div class=side-heading-spacer>
       </div>
     </div>
     <div class="bottom" id="bottom-left">
@@ -64,8 +72,8 @@
     </div>
     <div class="bottom" id="bottom-middle">
       <div class="side-heading-wrapper">
-        <a class="heading-large side-heading" href="https://www.merriam-webster.com/dictionary/suture" target="_blank">
-          SUTURE
+        <a class="side-heading" href="https://www.merriam-webster.com/dictionary/suture" target="_blank">
+          <span class=" fit-suture suture">SUTURE<span>
         </a>
       </div>
     </div>

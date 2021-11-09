@@ -1,25 +1,6 @@
 :root {
   --letter-spacing: -0.06em;
-
-
-  --heading-date-font-size: 3vh;
-  --heading-date-line-height: 0.88;
-
-  --heading-adress-font-size: 1.5vh;
-  --heading-adress-line-height: 0.88;
-
-
-  --suture-font-size: 14.93vh;
-  --suture-line-height: 1.13;
-  --suture-height: calc(0.875 * var(--suture-font-size));
-
-  --logo-top-height: calc(0.7 * var(--computedHeadingFontSize));
-  --logo-bottom-height: calc(0.45 * var(--logo-top-height) );
-
-
-  /* --link-hover-color: #00c9a3; */
---link-hover-color: 	#0013de;
-
+  --link-hover-color: 	#0013de;
 
   /* font metrics */
   --font: 'Sporting Grotesque_Bold';
@@ -28,12 +9,19 @@
   --fm-ascender: 1.062;
   --fm-linegap: 0.037;
 
+  --heading-date-font-size: 3vh;
+  --heading-date-line-height: 0.88;
+
+  --heading-adress-font-size: 1.5vh;
+  --heading-adress-line-height: 0.88;
+
+
   /* desired font-size for capital height */
-  --capital-height: 6.5;
+  --capital-height: 3;
 
   /* compute font-size to get capital height equal desired font-size */
   --computedFontSize: calc(var(--capital-height) / var(--fm-capitalHeight));
-  --computedHeadingFontSize: calc(var(--computedFontSize) * 1vh);
+  --computedHeadingFontSize: calc(var(--computedFontSize) * 1vw);
 
 
   --lineheightNormal: calc(var(--fm-ascender) + var(--fm-descender) + var(--fm-linegap));
@@ -42,15 +30,30 @@
   --distanceTop: calc(var(--fm-ascender) - var(--fm-capitalHeight));
   --valign: calc((var(--distanceBottom) - var(--distanceTop)) * var(--computedFontSize));
 
+
+
+  --suture-font-size: 7.6vw;
+  --suture-line-height: 1.13;
+  --suture-height: calc(0.875 * var(--suture-font-size));
+
+  --logo-top-height: calc(0.7 * var(--computedHeadingFontSize));
+  --logo-bottom-height: calc(0.45 * var(--logo-top-height) );
+
+
+
+
+
+
   /* desired line-height */
   --line-height: 1;
-  --computedHeadingLineHeight: calc(((var(--line-height) * var(--capital-height)) - var(--valign)) * 1vh);
+  --computedHeadingLineHeight: calc(((var(--line-height) * var(--capital-height)) - var(--valign)) * 1vw);
 
-  --heading-height: calc(3 * var(--computedHeadingFontSize) - 1.9vh);
+  --heading-height: calc(3 * var(--computedHeadingFontSize) - 0.5
+  vw);
   /* --heading-height: calc(3 * var(--heading-line-height) * var(--heading-font-size)); */
   --bottom-height: calc(100vh - var(--heading-height));
-
 }
+
 
 * {
   margin: 0;
@@ -66,6 +69,8 @@ body{
   align-items: normal;
 
   overflow: hidden;
+
+  font-family: 'Sporting Grotesque_Bold';
 
 }
 
@@ -89,7 +94,7 @@ a:visited{
 
 .left{
   height: 100vh;
-  flex: 0 0 auto;
+  flex: 4 1 auto;
 
   display: flex;
   flex-direction: column;
@@ -114,14 +119,17 @@ a:visited{
 }
 
 .top{
-  flex: 0 0 auto;
+  flex: 1 0 content;
 }
 
 .bottom{
-  flex: 1 0 var(--bottom-height);
+  flex: 2 0 auto;
 }
 
 #top-left{
+  display: flex;
+  flex-direction: row;
+
   top: 0;
   padding-top: 5px;
   padding-bottom: 10px;
@@ -129,19 +137,51 @@ a:visited{
 }
 
 .heading{
-  font-family: var(--font);
+  flex: 10 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.heading-large > a > div{
+.heading-large{
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 
-  display: inline-block;
-  font-size: var(--computedHeadingFontSize);
-  line-height: calc(var(--computedHeadingLineHeight));
+
+  background-color: orange;
+
+}
+
+.heading-large > a {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+
+
+  background-color: purple;
+  display: flex;
+  /* display: inline-block; */
+  /* font-size: var(--computedHeadingFontSize);
+  line-height: calc(var(--computedHeadingLineHeight)); */
+}
+
+.heading-large > a > div {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+
+
+
+  background-color: green;
+  display: block;
+  /* display: inline-block; */
+  /* font-size: var(--computedHeadingFontSize);
+  line-height: calc(var(--computedHeadingLineHeight)); */
 }
 
 .heading-large > a > div > span{
   display: inline-block;
-  vertical-align: calc(var(--valign) * -1.4vh);
+  /* vertical-align: calc(var(--valign) * -1.4vw); */
   /*
   font-size: var(--heading-font-size);
   line-height: calc(var(--heading-adress-line-height) * var(--heading-font-size));
@@ -153,13 +193,13 @@ a:visited{
 }
 
 #heading-large-first-span{
-  vertical-align: calc(var(--valign) * -1.1vh);
+  /* vertical-align: calc(var(--valign) * -1.1vw); */
 }
 
 
 
 .heading-small{
-  font-family: var(--font);
+  display: none ! important;
 
   display: inline-block;
   text-align: center;
@@ -190,6 +230,7 @@ a:visited{
 
 
 .content-wrapper{
+  display: none ! important;
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
@@ -225,8 +266,10 @@ img{
 
 
 .side-heading-spacer{
-  flex: 0 0 auto;
-  width: var(--suture-height);
+  flex: 1 0 auto;
+  background-color: lightgreen;
+  align-self: stretch;
+  /* width: var(--suture-height); */
 
 }
 
@@ -234,22 +277,26 @@ img{
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
+  background-color: lightblue;
 }
 
 .side-heading-wrapper{
+
   position: sticky;
-  top: var(--heading-height);
+  /* top: var(--heading-height); */
 }
 
 .side-heading{
-  font-family: var(--font);;
-  font-size: var(--suture-font-size);
-  line-height: var(--suture-line-height);
+  height: 100vh;
+  /* font-size: var(--suture-font-size);
+  line-height: var(--suture-line-height); */
   transform: rotate(90deg) ;
 
   position: absolute;
   transform-origin: top left;
   letter-spacing: var(--letter-spacing);
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 #top-right{
@@ -299,7 +346,6 @@ img{
 
 
 .name-list{
-  font-family: var(--font);
 
   list-style-type: none;
   text-align: right;
@@ -317,24 +363,9 @@ img{
   .right{display: none;}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.fonts-loaded .fit-font{
+       font-family: 'Sporting Grotesque_Bold';
+}
 
 @font-face {
     font-family: 'Sporting Grotesque_Regular';
