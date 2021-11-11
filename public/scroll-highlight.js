@@ -4,12 +4,19 @@ function initScrollHighlight() {
   var contentWrapper = document.getElementsByClassName('content-wrapper')[0];
   var imgContainers = contentWrapper.querySelectorAll('.img-container');
 
-  var nameElems_dict = {};
-  var nameList = document.getElementsByClassName('name-list')[0];
-  var nameElems = nameList.querySelectorAll('li');
-  nameElems.forEach(nameElem => {
-    let name = nameElem.dataset.artist;
-    nameElems_dict[name]=nameElem;
+  var nameLists = document.querySelectorAll('.name-list');
+
+  nameElems_dicts = [];
+
+  nameLists.forEach((nameList) => {
+    var nameElems_dict = {};
+    var nameElems = nameList.querySelectorAll('li');
+    nameElems.forEach(nameElem => {
+      let name = nameElem.dataset.artist;
+      nameElems_dict[name]=nameElem;
+    });
+
+  nameElems_dicts.push(nameElems_dict);
   });
 
   // create observer
@@ -23,21 +30,28 @@ function initScrollHighlight() {
       // remove active class
       let imgContainer = entry.target;
       let name = imgContainer.dataset.artist;
-      let nameElem = nameElems_dict[name];
-      let nameAnchor = nameElem.firstElementChild;
-      nameAnchor.className = "";
 
-      // add active class if visible
-      if (entry.isIntersecting) {
-        let visibleImgContainer = entry.target;
-        let visibleName = visibleImgContainer.dataset.artist;
+      nameElems_dicts.forEach((nameElems_dict) => {
 
-        let visibleNameElem = nameElems_dict[visibleName];
-        let visibleNameAnchor = visibleNameElem.firstChild;
+        let nameElem = nameElems_dict[name];
+        let nameAnchor = nameElem.children[0];
+        nameAnchor.className = "";
 
-        nameAnchor.className = "active";
+        // add active class if visible
+        if (entry.isIntersecting) {
+          let visibleImgContainer = entry.target;
+          let visibleName = visibleImgContainer.dataset.artist;
 
-      }
+
+          let visibleNameElem = nameElems_dict[visibleName];
+          let visibleNameAnchor = visibleNameElem.children[0];
+
+          // console.log(visibleNameElem.children[0]);
+          visibleNameElem.className = "active";
+          visibleNameAnchor.className = "active";
+
+        }
+      });
     });
   }
 

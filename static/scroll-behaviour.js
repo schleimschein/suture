@@ -56,9 +56,8 @@ function SmoothScroll(targetScroll, speed, smooth) {
 		moving = true
 
 		var delta = (globalPos - targetScroll.scrollTop) / smooth
-    console.log(delta)
 
-		targetScroll.scrollTop += delta
+		targetScroll.scrollTop += delta;
 
 		if (Math.abs(delta) > 1) // Update routine got stuck since delta would get stuck around 0.8
 			requestFrame(update)

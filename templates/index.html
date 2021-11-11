@@ -13,12 +13,25 @@
 {% endblock left_content %}
 
 {% block right_content %}
-  <ul class="name-list">
+<ul class="name-list">
     {% for page in section.pages %}
-      <li data-artist="{{ page.title | safe }}">
+<li data-artist="{{ page.title | safe }}">
 <a>{{ page.title | safe }}</a>
-      </li>
+</li>
     {% endfor %}
-  </ul>
+</ul>
 
 {% endblock right_content %}
+
+{% block navlist %}
+<div id="menu">
+<ul class="name-list">
+    {% for page in section.pages %}
+<li data-artist="{{ page.title | safe }}">
+<a>{{ page.title | safe }}</a>
+</li>
+    {% endfor %}
+</ul>
+</div>
+
+{% endblock navlist %}
